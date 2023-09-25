@@ -1,0 +1,15 @@
+/* App.css */
+.App {
+  text-align: center;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.list-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* İstediğiniz boşluk miktarını ayarlayabilirsiniz */
+}
