@@ -28,7 +28,7 @@ function CategoryForm() {
     <div className="container mt-4">
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <h2 className='background'>Ürün Ekle</h2>
+          <h2 className='background'>Ürün Ekleme</h2>
           {successMessage && <p className="alert alert-success">{successMessage}</p>}
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
