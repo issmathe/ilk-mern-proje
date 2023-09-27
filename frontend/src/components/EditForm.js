@@ -1,5 +1,3 @@
-// DüzenlemeForm.js
-
 import React, { useState } from 'react';
 
 function EditForm({ category, onSave, onCancel }) {
@@ -10,14 +8,15 @@ function EditForm({ category, onSave, onCancel }) {
     setEditedCategory({ ...editedCategory, [name]: value });
   };
 
-  const handleSave = () => {
+  const handleSave = (e) => {
+    e.preventDefault(); // Sayfanın yeniden yüklenmesini engelle
     onSave(editedCategory);
   };
 
   return (
     <div>
       <h3>Düzenle Kategori</h3>
-      <form>
+      <form onSubmit={handleSave}> {/* onSubmit eklenmiştir */}
         <div className="form-group">
           <label>Kategori</label>
           <input
@@ -48,7 +47,7 @@ function EditForm({ category, onSave, onCancel }) {
             onChange={handleInputChange}
           />
         </div>
-        <button className="btn btn-primary" onClick={handleSave}>
+        <button className="btn btn-primary" type="submit"> {/* type eklenmiştir */}
           Kaydet
         </button>
         <button className="btn btn-secondary ml-2" onClick={onCancel}>
