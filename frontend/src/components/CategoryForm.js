@@ -64,7 +64,7 @@ function CategoryForm() {
                 onChange={(e) => setFormData({ ...formData, price: e.target.value })}
               />
             </div>
-            <button type="submit" className="btn btn-primary">Add</button>
+            <button type="submit" className="btn btn-primary">Ekle</button>
           </form>
         </div>
       </div>
