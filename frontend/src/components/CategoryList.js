@@ -54,37 +54,40 @@ function CategoryList() {
     <div className="container mt-4">
       <h2>Ürün Görüntüle</h2>
       <table className="table">
-        <thead>
-          <tr>
-            <th scope="col">Kategori</th>
-            <th scope="col">İsim</th>
-            <th scope="col">Fiyatı</th>
-            <th scope="col">İşlemler</th>
-          </tr>
-        </thead>
-        <tbody>
-          {categories.map(category => (
-            <tr key={category._id}>
-              <td>{category.title}</td>
-              <td>{category.name}</td>
-              <td>{category.price}</td>
-              <td>
-                <button
-                  className="btn btn-danger"
-                  onClick={() => handleDelete(category._id)}
-                >
-                  Sil
-                </button>
-                <button
-                  className="btn btn-primary ml-2"
-                  onClick={() => handleEdit(category)}
-                >
-                  Düzenle
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+      <thead>
+  <tr>
+    <th scope="col">Kategori</th>
+    <th scope="col">İsim</th>
+    <th scope="col">Fiyatı</th>
+    <th scope="col">Oluşturulma Tarihi</th>
+    <th scope="col">İşlemler</th>
+  </tr>
+</thead>
+<tbody>
+  {categories.map(category => (
+    <tr key={category._id}>
+      <td>{category.title}</td>
+      <td>{category.name}</td>
+      <td>{category.price}</td>
+      <td>{new Date(category.createdAt).toLocaleString()}</td>
+      <td>
+        <button
+          className="btn btn-danger"
+          onClick={() => handleDelete(category._id)}
+        >
+          Sil
+        </button>
+        <button
+          className="btn btn-primary ml-2"
+          onClick={() => handleEdit(category)}
+        >
+          Düzenle
+        </button>
+      </td>
+    </tr>
+  ))}
+</tbody>
+
       </table>
       {editCategory && (
         <EditForm
